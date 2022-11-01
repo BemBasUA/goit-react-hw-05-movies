@@ -8,21 +8,19 @@ const Cast = () => {
   const { movieId } = useParams();
 
   useEffect(() => {
-    return () => {
-      getMovieCredits(movieId).then(cast => {
-        cast.map(actor => {
-          return setCast(prevState => [
-            ...prevState,
-            {
-              name: actor.name,
-              id: actor.id,
-              character: actor.character,
-              photo: 'https://image.tmdb.org/t/p/w500' + actor.profile_path,
-            },
-          ]);
-        });
+    getMovieCredits(movieId).then(cast => {
+      cast.map(actor => {
+        return setCast(prevState => [
+          ...prevState,
+          {
+            name: actor.name,
+            id: actor.id,
+            character: actor.character,
+            photo: 'https://image.tmdb.org/t/p/w500' + actor.profile_path,
+          },
+        ]);
       });
-    };
+    });
   }, [movieId]);
 
   return (
