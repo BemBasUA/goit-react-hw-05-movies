@@ -1,0 +1,10 @@
+.container {
+  padding: 0 40px;
+}
+.title {
+  font-size: 30px;
+}
+.link {
+  padding: 2px 0;
+  color: blue;
+}
