@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/727.bba20113.chunk.css","mappings":"AAAA,qBAEE,cAAe,CADf,WAEF,CACA,sBACE,cACF,CACA,oBAEE,UAAW,CADX,aAEF","sources":["pages/Movies/Movies.module.css"],"sourcesContent":[".input {\n  width: 500px;\n  font-size: 20px;\n}\n.button {\n  font-size: 20px;\n}\n.link {\n  padding: 2px 0;\n  color: blue;\n}\n"],"names":[],"sourceRoot":""}
