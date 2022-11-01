@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieReviews } from 'utils/getMovieReviews';
 
-export const Reviews = () => {
+const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
   const isFirstRender = useRef(true);
@@ -41,3 +41,5 @@ export const Reviews = () => {
     return <div>We don't have any reviews for this movie</div>;
   }
 };
+
+export default Reviews;
