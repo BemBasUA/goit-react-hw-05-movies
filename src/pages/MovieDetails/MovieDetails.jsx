@@ -1,9 +1,20 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { getMovieDetails } from 'utils/getMovieDetails';
 import { Outlet, useLocation } from 'react-router-dom';
 import css from './MovieDetails.module.css';
+import styled from 'styled-components';
+
+const StyledLink = styled(NavLink)`
+  color: #000;
+  padding: 2px;
+  font-size: 15px;
+  text-decoration: none;
+  &.active {
+    color: #8e0303;
+  }
+`;
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState({});
@@ -46,14 +57,20 @@ const MovieDetails = () => {
         <p>Additional information</p>
         <ul>
           <li>
-            <Link to={'cast'} state={{ from: location.state?.from ?? '/' }}>
+            <StyledLink
+              to={'cast'}
+              state={{ from: location.state?.from ?? '/' }}
+            >
               Cast
-            </Link>
+            </StyledLink>
           </li>
           <li>
-            <Link to={'reviews'} state={{ from: location.state?.from ?? '/' }}>
+            <StyledLink
+              to={'reviews'}
+              state={{ from: location.state?.from ?? '/' }}
+            >
               Reviews
-            </Link>
+            </StyledLink>
           </li>
         </ul>
       </div>

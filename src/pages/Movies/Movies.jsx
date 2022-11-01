@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { getByName } from 'utils/getByName';
 import { useSearchParams, useLocation } from 'react-router-dom';
+import { MovieList } from 'components/MovieList/MovieList';
 import css from './Movies.module.css';
 
 const Movies = () => {
@@ -35,19 +35,11 @@ const Movies = () => {
           search
         </button>
       </form>
-      {movies.map(movie => {
-        return (
-          <Link
-            className={css.link}
-            to={`${movie.id}`}
-            key={movie.id}
-            style={{ display: 'block' }}
-            state={{ from: location }}
-          >
-            {movie.name || movie.title}
-          </Link>
-        );
-      })}
+      <MovieList
+        movies={movies}
+        style={css.link}
+        state={{ from: location }}
+      ></MovieList>
     </>
   );
 };

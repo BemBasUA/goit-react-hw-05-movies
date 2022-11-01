@@ -12,18 +12,15 @@ const Reviews = () => {
       return;
     }
     isFirstRender.current = false;
-    getMovieReviews(movieId).then(
-      reviews => {
-        reviews.map(review => {
-          return setReviews(prevState => [
-            ...prevState,
-            { id: review.id, author: review.author, content: review.content },
-          ]);
-        });
-      },
-      [movieId]
-    );
-  });
+    getMovieReviews(movieId).then(reviews => {
+      reviews.map(review => {
+        return setReviews(prevState => [
+          ...prevState,
+          { id: review.id, author: review.author, content: review.content },
+        ]);
+      });
+    });
+  }, [movieId]);
   if (reviews.length >= 1) {
     return (
       <div>
